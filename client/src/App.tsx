@@ -11,6 +11,11 @@ function App() {
       <div className='content'>
         <Navigate />
         <Sidebar />
+        <div className="content-mainContent">
+          {/* Категории */}
+          {/* Галерея */}
+          as
+        </div>
       </div>
 
     </div>

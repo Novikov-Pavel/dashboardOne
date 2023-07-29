@@ -1,4 +1,19 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+}
+
+img,
+svg {
+    cursor: pointer;
+}
 .content {
     display: flex;
     background-color: #f7f8fa;
+    &-mainContent {
+        box-shadow: 0px 2px 5px 0px rgba(38, 51, 77, 0.03);
+        background-color: #fff;
+        border-radius: 15px;
+        margin: 30px 0;
+    }
 }
