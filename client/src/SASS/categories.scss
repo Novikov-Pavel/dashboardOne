@@ -1,5 +1,13 @@
 .categories {
     margin: 30px 20px 90px;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 250px;
+        height: 100%;
+        border-right: 2px solid #F5F6F7;
+    }
     &-btn {
         display: flex;
         align-items: center;

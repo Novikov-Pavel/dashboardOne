@@ -11,7 +11,11 @@ svg {
 .content {
     display: flex;
     background-color: #f7f8fa;
+    overflow:hidden;
+    max-width: 1600px;
     &-mainContent {
+        position: relative;
+        display: flex;
         box-shadow: 0px 2px 5px 0px rgba(38, 51, 77, 0.03);
         background-color: #fff;
         border-radius: 15px;

@@ -1,24 +1,30 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import more from '../assets/more.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faBell, faChevronUp, faCircleUser, faCircleXmark, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import '../SASS/header.scss'
 
+import { global } from '../App'
+
 function Header() {
 
-    const [img, setImg] = useState<[]>([])
-    const [albumId, setAlbumId] = useState('')
-    console.log('albumId', albumId);
+    const { albumId, setAlbumId, img, setImg } = React.useContext(global)
 
     let fetching = async () => {
-        let res = await fetch(`https://jsonplaceholder.typicode.com/albums/${albumId}/photos?_limit=16`)
-        let data = await res.json()
-        setImg(data)
-        console.log('img', img);
+        try {
+            let res = await fetch(`https://jsonplaceholder.typicode.com/albums/${albumId || '1'}/photos?_limit=16`)
+            if (res.ok) {
+                let data = await res.json()
+                setImg(data)
+            }
+        } catch (error) {
+            console.error(error);
+        }
+
     }
 
-    useEffect(() => { fetching() }, [albumId])
+    useEffect(() => { fetching() }, [])
 
     return (
         <div className='header'>

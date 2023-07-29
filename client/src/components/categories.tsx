@@ -40,16 +40,25 @@ function Categories() {
                     {
                         Object.entries(list).map((e, i) => (
                             <li
+                                key={Math.random()}
                                 className={li === i ? 'categories-list-item__active' : 'categories-list-item'}
                                 onClick={() => setLi(i)}
                             >
-                                <img src={folder} alt="folder" />
-                                <span className='categories-list-item__span'>{e.map(e => (
-                                    <span>{e}</span>
+                                <img
+                                    key={Math.random()}
+                                    src={folder}
+                                    alt="folder"
+                                />
+                                <span
+                                    key={Math.random()}
+                                    className='categories-list-item__span'
+                                >{e.map(e => (
+                                    <span key={e}
+                                    >{e}</span>
                                 ))}</span></li>
                         ))
                     }
-                </ul>                
+                </ul>
             </div>
             <ul className='categories-addItem'>
                 <li>Add Folder</li>
@@ -59,7 +68,7 @@ function Categories() {
                 <div className='categories-label-items'>
                     {
                         labels.map((e, i) => (
-                            <div className='categories-label-items__pos'>
+                            <div key={e} className='categories-label-items__pos'>
                                 <img
                                     src={i === 0 ? label1 : i === 1 ? label2 : i === 2 ? label3 : i === 3 ? label4 : i === 4 ? label5 : addItem}
                                     alt="label"
