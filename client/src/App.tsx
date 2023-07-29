@@ -3,6 +3,7 @@ import Header from './components/header'
 import Sidebar from './components/sidebar';
 import Navigate from './components/navigate';
 import './SASS/App.scss'
+import Categories from './components/categories';
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
         <div className="content-mainContent">
           {/* Категории */}
           {/* Галерея */}
-          as
+          <Categories />
         </div>
       </div>
 
