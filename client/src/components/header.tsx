@@ -8,10 +8,8 @@ import '../SASS/header.scss'
 import { global } from '../App'
 
 function Header() {
-
-    const { albumId, setAlbumId, setImg, setFlexGrid, flexGrid, fetching } = React.useContext(global)
-
-    
+    const { albumId, setAlbumId, flexGrid, fetching } = React.useContext(global)
+    const ref = React.useRef<HTMLInputElement>(null)
     React.useEffect(() => {
         flexGrid ? fetching(16) : fetching(5)
     }, [])
@@ -36,7 +34,7 @@ function Header() {
                 <Link to={'/'}>Contacts</Link>
                 <Link to={'/'}><img src={more} alt="more" /></Link>
             </div>
-            <form action="" method="get" className='header-form'>
+            <form className='header-form'>
                 <FontAwesomeIcon
                     icon={faMagnifyingGlass}
                     size="xl"
@@ -46,12 +44,14 @@ function Header() {
                     placeholder='Search Transactions and Documents'
                     value={albumId}
                     onChange={e => setAlbumId(e.target.value)}
+                    ref={ref}
                 />
                 <button
                     type="submit"
                     onClick={(e) => {
                         flexGrid ? fetching(16) : fetching(5)
                         e.preventDefault()
+                        ref.current?.focus()
                     }}>
                     <FontAwesomeIcon
                         icon={faChevronUp}

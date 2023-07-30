@@ -1,18 +1,21 @@
 import React from 'react'
-import { faList, faMagnifyingGlass, faTableCells, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faList, faMagnifyingGlass, faTableCells, faTrash, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { global } from '../App'
 import '../SASS/gallery.scss'
 
 function Gallary() {
-    const { img, setImg, flexGrid, setFlexGrid, fetching, searchGallery, setSearchGallary } = React.useContext(global)
-    console.log('img', img);
-    console.log('searchGallery', searchGallery);
-
+    const { img, setImg, flexGrid, setFlexGrid, fetching, searchGallery, setSearchGallary, albumId } = React.useContext(global)
+    const ref = React.useRef<HTMLInputElement>(null)
+    const clearInput = () => {
+        setSearchGallary('')
+        ref.current?.focus()
+    }
     const clear = () => setImg([])
-
     const flex = (value: boolean) => setFlexGrid(value)
 
+    console.log('albumId', albumId);
+    
     return (
         <div className='gallery'>
             <div className="gallery-header">
@@ -50,7 +53,12 @@ function Gallary() {
                         placeholder='Search'
                         value={searchGallery}
                         onChange={e => setSearchGallary(e.target.value)}
+                        ref={ref}
                     />
+                    {searchGallery !== '' &&
+                        <FontAwesomeIcon icon={faXmark} size="xl" style={{ color: "#c3cad9" }}
+                            onClick={() => clearInput()}
+                        />}
                 </form>
             </div>
             <div className={flexGrid ? "gallery-flex" : 'gallery-grid'}>
@@ -61,7 +69,7 @@ function Gallary() {
                             <div className={flexGrid ? "gallery-flex__img" : 'gallery-grid__img'} key={e.title} >
                                 <img src={e.thumbnailUrl} alt={e.title} key={e.title} />
                             </div>
-                            <h3>{e.title}</h3>
+                            <h3>{e.title.slice(0, 20)}...</h3>
                             <p>ID: {e.id}</p>
                         </div>
                     ))
