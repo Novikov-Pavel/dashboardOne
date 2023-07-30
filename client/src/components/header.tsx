@@ -6,7 +6,7 @@ import { faBars, faBell, faChevronUp, faCircleUser, faCircleXmark, faMagnifyingG
 import '../SASS/header.scss'
 
 import { global } from '../App'
-
+ 
 function Header() {
     const { albumId, setAlbumId, flexGrid, fetching } = React.useContext(global)
     const ref = React.useRef<HTMLInputElement>(null)
