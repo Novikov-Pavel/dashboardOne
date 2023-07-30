@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from '@react-email/link'
 import faSocialPerson from '../assets/faSocialPerson.png'
 import faSocialNavigation from '../assets/faSocialNavigation.png'
 import AvatarImage from '../assets/AvatarImage.png'
-import Dashboard from '../assets/sidebar/dashboard.svg'
+import Dashboard from '../assets/sidebar/Dashboard.svg'
 import Notes from '../assets/sidebar/Notes.svg'
 import Invoice from '../assets/sidebar/Invoice.svg'
 import Files from '../assets/sidebar/Files.svg'
@@ -18,16 +19,22 @@ import ic_whatsapp from '../assets/sidebar/ic_whatsapp.svg'
 import '../SASS/sidebar.scss'
 
 function Sidebar() {
+
+  const socials = [faSocialPerson, faSocialNavigation]
+  const tabs = [Dashboard, Notes, Invoice, Files, Events, Teams, Massage, Settings]
+  const contants = [local_phone, mail, chrome_reader_mode, ic_telegram, ic_whatsapp]
+
   return (
     <div className='sidebar'>
+
       <div className="sidebar-socials">
-        <div className='sidebar-socials__bg'>
-          <img src={faSocialPerson} alt="faSocialPerson" />
-        </div>
-        <div className='sidebar-socials__bg'>
-          <img src={faSocialNavigation} alt="faSocialNavigation" />
-        </div>
+        {socials.map(e => (
+          <div className='sidebar-socials__bg' key={e}>
+            <img src={e} alt={e} key={e} />
+          </div>
+        ))}
       </div>
+
       <div className="sidebar-accaunt">
         <div>
           <div className="sidebar-accaunt-avatar">
@@ -36,49 +43,25 @@ function Sidebar() {
           <span className="sidebar-accaunt-count">2</span>
         </div>
         <h2 className='sidebar-accaunt-h2'>Hello Alfred Bryant</h2>
-        <p className='sidebar-accaunt-email'>adrain.nader@yahoo.com</p>
+        <Link
+          href='mailto:adrain.nader@yahoo.com'
+          target='_blank'
+        >adrain.nader@yahoo.com</Link>
       </div>
-      <div className='sidebar-tabs'>
-        <figure>
-          <img src={Dashboard} alt="Dashboard" />
-          <figcaption>Dashboard</figcaption>
-        </figure>
-        <figure>
-          <img src={Notes} alt="Notes" />
-          <figcaption>Notes</figcaption>
-        </figure>
-        <figure>
-          <img src={Invoice} alt="Invoice" />
-          <figcaption>Invoice</figcaption>
-        </figure>
-        <figure>
-          <img src={Files} alt="Files" />
-          <figcaption>Files</figcaption>
-        </figure>
-        <figure>
-          <img src={Events} alt="Events" />
-          <figcaption>Events</figcaption>
-        </figure>
-        <figure>
-          <img src={Teams} alt="Teams" />
-          <figcaption>Teams</figcaption>
-        </figure>
-        <figure>
-          <img src={Massage} alt="Massage" />
-          <figcaption>Massage</figcaption>
-        </figure>
-        <figure>
-          <img src={Settings} alt="Settings" />
-          <figcaption>Settings</figcaption>
-        </figure>
 
+      <div className='sidebar-tabs'>
+        {tabs.map(e => (
+          <figure key={Math.random()}>
+            <img src={e} alt={e} key={Math.random()} />
+            <figcaption key={Math.random()}>{e.replace(/^.*\//g, '').replace(/\..*/g, '')}</figcaption>
+          </figure>
+        ))}
       </div>
+
       <div className="sidebar-contants">
-        <img src={local_phone} alt="local_phone" />
-        <img src={mail} alt="mail" />
-        <img src={chrome_reader_mode} alt="chrome_reader_mode" />
-        <img src={ic_telegram} alt="ic_telegram" />
-        <img src={ic_whatsapp} alt="ic_whatsapp" />
+        {contants.map(e => (
+          <img src={e} alt="e" key={e} />
+        ))}
       </div>
     </div >
   )

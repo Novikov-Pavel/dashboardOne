@@ -1,109 +1,86 @@
+@import "../SASS/vars/";
+@import "../SASS/sidebar/sidebarMixins.scss";
+
 .sidebar {
     padding: 30px 50px;
     &-socials {
-        display: flex;
-        justify-content: space-between;
+        @include flex(space-between, center);
         &__bg {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background-color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            @include circle(40px, 40px);
+            @include flex(center, center);
+            background-color: $white;
         }
     }
     &-accaunt {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
+        @include flex(space-between, center, column);
         &-avatar {
-            width: 130px;
-            height: 130px;
-            border: 2px solid #ff6633;
-            border-radius: 50%;
+            @include flex(center, center);
+            @include circle(130px, 130px);
+            border: 2px solid $orange;
             transform: rotate(-45deg);
-            border-right-color: #dadee6;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            border-right-color: $border-right-color;
             img {
                 transform: rotate(45deg);
-                width: 110px;
-                height: 110px;
+                @include circle(110px, 110px);
             }
         }
         &-h2 {
             font: 700 16px Roboto;
-            color: #6b7a99;
-            text-align: center;
+            color: $avaName;
             padding: 30px 0 10px;
-        }
-        &-email {
-            font: 700 14px Roboto;
-            color: #adb8cc;
-            text-align: center;
+            & + a {
+                font-size: 14px;
+                color: $email !important;
+            }
         }
         &-count {
-            background-color: #ff6633;
-            border-radius: 50%;
+            background-color: $orange;
+            @include circle(30px, 30px);
+            @include flex(center, center);
             position: relative;
             right: -114px;
             top: -83px;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             font: 900 12px Roboto;
-            color: #fff;
+            color: $white;
             box-shadow: 0px 2px 15px 0px rgba(255, 102, 51, 0.25);
         }
     }
     &-tabs {
         margin-top: 40px;
-        display: flex;
+        @include flex(center, center);
         flex-wrap: wrap;
         max-width: 244px;
-        justify-content: center;
         border: 2px solid #edeff2;
         border-radius: 20px;
         figure {
-            width: 120px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
+            @include flex(center, center, column);
             color: #adb8cc;
+            width: 120px;
+            gap: 20px;
             font: 700 12px Roboto;
             padding: 25px 40px;
-            img {
-                width: 30px;
-            }
             &:nth-child(even) {
-                border-left: 2px solid #edeff2;
+                border-left: 2px solid $border;
             }
             &:nth-child(1n + 3) {
-                border-top: 2px solid #edeff2;
+                border-top: 2px solid $border;
             }
             &:hover {
-                background-color: #fff;
+                background-color: $white;
                 border-radius: 20px;
                 border: none;
                 transform: scale(1.2);
                 transition: all 0.3s;
-                color: #ff6633;
+                color: $orange;
             }
         }
     }
     &-contants {
-        display: flex;
+        @include flex(space-between, center);
         gap: 10px;
         padding: 15px 25px;
         border-radius: 30px;
-        border: 2px solid #edeff2;
+        border: 2px solid $border;
         margin-top: 145px;
-        
     }
 }

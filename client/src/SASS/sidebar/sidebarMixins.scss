@@ -1,0 +1,11 @@
+@mixin flex($justify-content, $align-items, $flex-direction: row) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+    flex-direction: $flex-direction;
+}
+@mixin circle($width, $height) {
+    width: $width;
+    height: $height;
+    border-radius: 50%;
+}
