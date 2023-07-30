@@ -11,7 +11,7 @@ let defaultValue = {
   setImg: (a:[]): void => {
     throw new Error('error');
   },
-  albumId: '1',
+  albumId: '',
   setAlbumId: (c:string): void => {
     throw new Error('error');
   },

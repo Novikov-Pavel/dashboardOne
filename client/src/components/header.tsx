@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import more from '../assets/more.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -9,7 +9,7 @@ import { global } from '../App'
 
 function Header() {
 
-    const { albumId, setAlbumId, img, setImg } = React.useContext(global)
+    const { albumId, setAlbumId, setImg } = React.useContext(global)
 
     let fetching = async () => {
         try {
@@ -24,7 +24,7 @@ function Header() {
 
     }
 
-    useEffect(() => { fetching() }, [])
+    React.useEffect(() => { fetching() }, [])
 
     return (
         <div className='header'>

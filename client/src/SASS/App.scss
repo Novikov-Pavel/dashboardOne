@@ -8,17 +8,22 @@ button,
 svg {
     cursor: pointer;
 }
+.App {
+    margin: 0 auto;
+    max-width: 1600px;
+    overflow:hidden;
+}
 .content {
     display: flex;
     background-color: #f7f8fa;
-    overflow:hidden;
-    max-width: 1600px;
     &-mainContent {
         position: relative;
         display: flex;
+        flex: 1 auto;
         box-shadow: 0px 2px 5px 0px rgba(38, 51, 77, 0.03);
         background-color: #fff;
         border-radius: 15px;
-        margin: 30px 0;
+        margin: 30px 30px 30px 0;
+        overflow: hidden;
     }
 }
