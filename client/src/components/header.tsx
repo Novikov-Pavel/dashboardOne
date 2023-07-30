@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom'
 import more from '../assets/more.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faBell, faChevronUp, faCircleUser, faCircleXmark, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import '../SASS/header.scss'
-
 import { global } from '../App'
+import '../SASS/header.scss'
  
 function Header() {
     const { albumId, setAlbumId, flexGrid, fetching } = React.useContext(global)

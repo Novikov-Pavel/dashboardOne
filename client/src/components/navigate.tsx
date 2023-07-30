@@ -1,4 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React from 'react'
 import faCompass from '../assets/faCompass.svg'
 import faStar from '../assets/faStar.svg'
@@ -11,63 +10,34 @@ import Avatar2 from '../assets/Avatar2.png'
 import Avatar3 from '../assets/Avatar3.png'
 import Avatar4 from '../assets/Avatar4.png'
 import faAddCircle from '../assets/faAddCircle.svg'
-import '../SASS/navigate.scss'
+import '../SASS/navigate/navigate.scss'
 
 function Navigate() {
+
+  let navTop = [faCompass, faStar, faFB, faTrendingUp, faSocialPublicon, faSocialLocationCity]
+  let navBottom = [Avatar1, Avatar2, Avatar3, Avatar4, faAddCircle]
+
   return (
     <div className='navigate'>
       <div className='navigate-top'>
-        <div className='navigate-faCompass'>
-          <img src={faCompass} alt='faCompass' />
-        </div>
-        <div className='navigate-faCompass'>
-          <img src={faStar} alt='faStar' />
-        </div>
-        <div className='navigate-faCompass fa-layers'>
-          <img src={faFB} alt='faFB' />
-          <span className="fa-layers-counter"
-            style={{
-              backgroundColor: '#FF6633',
-              borderRadius: '50%',
-              width: 50,
-              height: 50
-            }}></span>
-        </div>
-        <div className='navigate-faCompass'>
-          <img src={faTrendingUp} alt='faTrendingUp' />
-        </div>
-        <div className='navigate-faCompass'>
-          <img src={faSocialPublicon} alt='faSocialPublicon' />
-        </div>
-        <div className='navigate-faCompass'>
-          <img src={faSocialLocationCity} alt='faSocialLocationCity' />
-        </div>
+
+        {navTop.map((e, i) => (
+          <div className={navTop[2] === e ? 'fa-layers navigate-bg' : 'navigate-bg'}>
+            <img src={e} alt="" key={e} />
+            {navTop[2] === e && <span className="fa-layers-counter"></span>}
+          </div>
+        ))}
       </div>
 
       <div className='navigate-bottom'>
-        <div className='navigate-faCompass fa-layers'>
-          <img src={Avatar1} alt='Avatar1' />
-          <span className="fa-layers-counter"
-            style={{
-              backgroundColor: '#FF6633',
-              borderRadius: '50%',
-              width: 50,
-              height: 50
-            }}></span>
-        </div>
-        <div className='navigate-faCompass'>
-          <img src={Avatar2} alt='Avatar2' />
-        </div>
-        <div className='navigate-faCompass'>
-          <img src={Avatar3} alt='Avatar3' />
-        </div>
-        <div className='navigate-faCompass'>
-          <img src={Avatar4} alt='Avatar4' />
-        </div>
-        <div className='navigate-faCompass'>
-          <img src={faAddCircle} alt='faAddCircle' />
-        </div>
+        {navBottom.map((e, i) => (
+          <div className={navBottom[0] === e ? 'fa-layers navigate-bg' : 'navigate-bg'}>
+            <img src={e} alt='Avatars' key={e + i} />
+            {navBottom[0] === e && <span className="fa-layers-counter"></span>}
+          </div>
+        ))}
       </div>
+
     </div>
   )
 }
