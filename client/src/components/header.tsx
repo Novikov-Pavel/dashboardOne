@@ -9,22 +9,12 @@ import { global } from '../App'
 
 function Header() {
 
-    const { albumId, setAlbumId, setImg } = React.useContext(global)
+    const { albumId, setAlbumId, setImg, setFlexGrid, flexGrid, fetching } = React.useContext(global)
 
-    let fetching = async () => {
-        try {
-            let res = await fetch(`https://jsonplaceholder.typicode.com/albums/${albumId || '1'}/photos?_limit=16`)
-            if (res.ok) {
-                let data = await res.json()
-                setImg(data)
-            }
-        } catch (error) {
-            console.error(error);
-        }
-
-    }
-
-    React.useEffect(() => { fetching() }, [])
+    
+    React.useEffect(() => {
+        flexGrid ? fetching(16) : fetching(5)
+    }, [])
 
     return (
         <div className='header'>
@@ -60,7 +50,7 @@ function Header() {
                 <button
                     type="submit"
                     onClick={(e) => {
-                        fetching()
+                        flexGrid ? fetching(16) : fetching(5)
                         e.preventDefault()
                     }}>
                     <FontAwesomeIcon

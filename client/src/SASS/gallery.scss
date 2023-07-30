@@ -38,28 +38,80 @@
                 border: none;
                 padding: 15px;
                 font: 900 10px Roboto;
-                color: #7D8FB3;
+                color: #7d8fb3;
                 &:focus {
                     outline: none;
                 }
             }
         }
     }
-    &-main {
+    &-flex {
         margin: 65px;
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
         gap: 25px;
         &__item {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            max-width: 160px;
+            text-align: center;
+            h3 {
+                padding: 20px 0 10px;
+            }
+        }
+        &__img {
             border-radius: 10px;
             border: 2px solid #f5f6f7;
-            background: #fff;
             padding: 5px;
             box-shadow: 0px 2px 5px 0px rgba(38, 51, 77, 0.03);
             img {
                 width: 150px;
                 height: 150px;
+            }
+            &__grid {
+                display: grid;
+            }
+        }
+    }
+    &-grid {
+        display: grid;
+        gap: 30px;
+        margin: 65px;
+        text-align: center;
+        grid-template-areas:
+            "A A   A B   B B"
+            "C C   D D   E E";
+        &__item {
+            img {
+                min-width: 100%;
+                max-height:min-content;
+                border-radius: 10px;
+                box-shadow: 0px 2px 5px 0px rgba(38, 51, 77, 0.03);
+            }
+            h3 {
+                padding: 20px 0 10px;
+            }
+            &:nth-child(1) {
+                justify-self: stretch;
+                grid-area: A;
+            }
+            &:nth-child(2) {
+                justify-self: stretch;
+                grid-area: B;
+            }
+            &:nth-child(3) {
+                justify-self: stretch;
+                grid-area: C;
+            }
+            &:nth-child(4) {
+                justify-self: stretch;
+                grid-area: D;
+            }
+            &:nth-child(5) {
+                justify-self: stretch;
+                grid-area: E;
             }
         }
     }
