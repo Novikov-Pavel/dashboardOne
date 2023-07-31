@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Header from '../components/header/header'
 import Sidebar from '../components/sidebar/sidebar';
 import Navigate from '../components/navigate/navigate';
-import Categories from '../components/categories';
+import Categories from '../components/categories/categories';
 import Gallary from '../components/gallary/gallary';
 import { Value, imgI } from './types';
 import '../SASS/App.scss'

@@ -4,6 +4,11 @@
     align-items: $align-items;
     flex-direction: $flex-direction;
 }
+@mixin grid($justify-content, $align-items) {
+    display: grid;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
 @mixin circle($width, $height) {
     width: $width;
     height: $height;

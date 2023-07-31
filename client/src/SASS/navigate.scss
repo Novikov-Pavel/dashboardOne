@@ -6,7 +6,8 @@
     @include circle(50px, 50px);
 }
 .navigate {
-    @include flex(space-between, center, column);
+    @include flex(flex-start, center, column);
+    gap: 285px;
     border-right: 2px solid $border;
     padding: 30px 25px;
     &-bg {

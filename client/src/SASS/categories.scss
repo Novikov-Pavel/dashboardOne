@@ -1,3 +1,6 @@
+@import "./mixins";
+@import "./vars";
+
 .categories {
     margin: 30px 20px 90px;
     &:after {
@@ -9,23 +12,23 @@
         border-right: 2px solid #F5F6F7;
     }
     &-btn {
-        display: flex;
-        align-items: center;
+        @include flex(center, center);
         position: relative;
         margin-bottom: 45px;
         button {
             width: 210px;
+            white-space: nowrap;
             border-radius: 30px;
-            border: 2px solid #f63;
-            background: #f63;
-            box-shadow: 0px 10px 30px 0px rgba(255, 102, 51, 0.2);
+            border: 2px solid $orange;
+            background: $orange;
+            box-shadow: 0px 10px 30px 0px rgba($boxShadow, 0.2);
             padding: 15px 45px 15px 60px;
-            font: 900 12 Roboto;
-            color: #fff;
+            font: 900 12px Roboto;
+            color: $white;
             transition: all 0.3s;
             &:hover {
-                background-color: #6b7a99;
-                border-color: #6b7a99;
+                background-color: $avaName;
+                border-color: $avaName;
             }
         }
         img {
@@ -36,63 +39,48 @@
     &-list,
     &-addItem {
         position: relative;
-        display: flex;
-        justify-content: space-between;
+        @include flex(flex-start, center);
         font: 700 13px/25px Roboto;
-        color: #6b7a99;
-        list-style: none;
+        color: $avaName;
         padding-bottom: 35px;
         &-item {
-            display: flex;
-            align-items: center;
-            list-style: none;
+            @include flex(space-between, center);
             border: 2px solid transparent;
             padding: 10px 20px;
-            width: 210px;
             &__active {
-                width: 210px;
+                @include flex(space-between, center);
                 padding: 10px 20px;
-                display: flex;
-                align-items: center;
                 border-radius: 30px;
-                border: 2px solid #f5f6f7;
-                box-shadow: 0px 10px 30px 0px rgba(38, 51, 77, 0.03);
-                list-style: none;
+                border: 2px solid $border-color;
+                box-shadow: 0px 10px 30px 0px rgba($boxShadow, 0.03);
             }
             &__span {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
+                @include flex(space-between, center);
                 width: 100%;
             }
         }
         &__keys {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
+            @include flex(space-around, normal, column);
             cursor: pointer;
             width: 100%;
         }
         
     }
     &-addItem {
-        background: url("../assets/mainContent/categories/add_circle.svg") no-repeat top left;
-        padding-left: 40px;
+        padding: 0 20px;
         list-style: none;
         cursor: pointer;
     }
     &-label {
         font: 700 13px/25px Roboto;
-        color: #6b7a99;
-        margin-top: 70px;
+        color: $avaName;
+        margin: 70px 20px 0px;
         &-items {
+            @include flex(center, normal, column);
             padding-top: 30px;
-            display: flex;
-            flex-direction: column;
             gap: 20px;
             &__pos {
-                display: flex;
-                align-items: center;
+                @include flex(flex-start, center);
                 gap: 20px;
                 cursor: pointer;
             }

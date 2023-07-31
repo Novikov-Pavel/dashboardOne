@@ -1,14 +1,14 @@
 import React from 'react'
-import { global } from '../App/App'
-import incertDoc from '../assets/mainContent/categories/incertDoc.svg'
-import label1 from '../assets/mainContent/categories/label1.svg'
-import label2 from '../assets/mainContent/categories/label2.svg'
-import label3 from '../assets/mainContent/categories/label3.svg'
-import label4 from '../assets/mainContent/categories/label4.svg'
-import label5 from '../assets/mainContent/categories/label5.svg'
-import addItem from "../assets/mainContent/categories/add_circle.svg"
-import folder from "../assets/mainContent/categories/folder.svg"
-import '../SASS/categories.scss'
+import { global } from '../../App/App'
+import incertDoc from '../../assets/mainContent/categories/incertDoc.svg'
+import label1 from '../../assets/mainContent/categories/label1.svg'
+import label2 from '../../assets/mainContent/categories/label2.svg'
+import label3 from '../../assets/mainContent/categories/label3.svg'
+import label4 from '../../assets/mainContent/categories/label4.svg'
+import label5 from '../../assets/mainContent/categories/label5.svg'
+import addItem from "../../assets/mainContent/categories/add_circle.svg"
+import folder from "../../assets/mainContent/categories/folder.svg"
+import '../../SASS/categories.scss'
 
 function Categories() {
     const { li, setLi } = React.useContext(global)
@@ -62,6 +62,7 @@ function Categories() {
                 </ul>
             </div>
             <ul className='categories-addItem'>
+                <img src={addItem} alt="" />
                 <li>Add Folder</li>
             </ul>
             <div className='categories-label'>

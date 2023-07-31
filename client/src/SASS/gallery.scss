@@ -1,9 +1,14 @@
+@import "./mixins";
+@import "./vars";
+
 .gallery {
     flex: 1 auto;
     &-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        svg {
+            color: $svg-color;
+            padding: 10px;
+        }
+        @include flex(space-between, center);
         margin: 25px 20px;
         &:after {
             content: "";
@@ -11,113 +16,109 @@
             top: 100px;
             left: 250px;
             width: 100%;
-            border-bottom: 2px solid #f5f6f7;
+            border-bottom: 2px solid $border-color;
         }
         &__rending {
-            box-shadow: 0px 2px 5px 0px rgba(38, 51, 77, 0.03);
-            border: 2px solid #f5f6f7;
+            box-shadow: 0px 2px 5px 0px rgba($boxShadow, 0.03);
+            border: 2px solid $border-color;
             border-radius: 100px;
             svg + svg {
-                border-left: 2px solid #f5f6f7;
+                border-left: 2px solid $border-color;
             }
         }
         &__icons {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            @include flex(space-between, center);
             gap: 10px;
+            > svg {
+                border: 2px solid $border-color;
+                border-radius: 100px;
+            }
         }
         &__form {
-            min-width: 230px;
-            border: 2px solid #f5f6f7;
+            @include flex(space-between, center);
+            min-width: 270px;
+            border: 2px solid $border-color;
             border-radius: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             padding: 0 20px;
             input {
                 border: none;
                 padding: 15px;
                 font: 900 10px Roboto;
-                color: #7d8fb3;
+                color: $input-color;
                 &:focus {
                     outline: none;
                 }
                 &::placeholder {
-                    color: #7d8fb3;
+                    color: $input-color;
                 }
             }
         }
     }
-    &-flex {
-        margin: 65px;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 25px;
-        &__item {
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            max-width: 160px;
-            text-align: center;
-            h3 {
-                padding: 20px 0 10px;
-            }
+    &-none {
+        display: none;
+    }
+    &-block {
+        display: block;
+        h3 {
+            font: 700 12px Roboto;
         }
+        p {
+            font: 700 10px Roboto;
+        }
+    }
+    &-inner {
+        margin: 65px 0;
+
+    }
+    &-flex {
+        @include flex(space-evenly, normal);
+        flex-wrap: wrap;
+        gap: 13px;
+    }
+    &-flexItem {
+        @include flex(center, center, column);
         &__img {
             border-radius: 10px;
-            border: 2px solid #f5f6f7;
+            border: 2px solid $border-color;
             padding: 5px;
-            box-shadow: 0px 2px 5px 0px rgba(38, 51, 77, 0.03);
-            img {
-                width: 150px;
-                height: 150px;
-            }
-            &__grid {
-                display: grid;
-            }
+            box-shadow: 0px 2px 5px 0px rgba($boxShadow, 0.03);
         }
     }
     &-grid {
-        display: grid;
-        gap: 30px;
-        margin: 65px;
+        @include grid(space-evenly, center);
         text-align: center;
+        gap: 30px;
         grid-template-areas:
-            "A A   A B   B B"
-            "C C   D D   E E";
-        &__item {
-            img {
-                width: 100%;
-                min-height: 200px;
-                max-height: 360px;
-                border-radius: 10px;
-                box-shadow: 0px 2px 5px 0px rgba(38, 51, 77, 0.03);
-            }
-            h3 {
-                padding: 20px 0 10px;
-            }
-            &:nth-child(1) {
-                justify-self: stretch;
-                grid-area: A;
-            }
-            &:nth-child(2) {
-                justify-self: stretch;
-                grid-area: B;
-            }
-            &:nth-child(3) {
-                justify-self: stretch;
-                grid-area: C;
-            }
-            &:nth-child(4) {
-                justify-self: stretch;
-                grid-area: D;
-            }
-            &:nth-child(5) {
-                justify-self: stretch;
-                grid-area: E;
-            }
+            "A A A B B B"
+            "C C D D E E";
+    }
+    &-gridItem {
+        img {
+            width: 100%;
+            min-height: 200px;
+            max-height: 360px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 5px 0px rgba($boxShadow, 0.03);
+        }
+        &:nth-child(1) {
+            justify-self: stretch;
+            grid-area: A;
+        }
+        &:nth-child(2) {
+            justify-self: stretch;
+            grid-area: B;
+        }
+        &:nth-child(3) {
+            justify-self: stretch;
+            grid-area: C;
+        }
+        &:nth-child(4) {
+            justify-self: stretch;
+            grid-area: D;
+        }
+        &:nth-child(5) {
+            justify-self: stretch;
+            grid-area: E;
         }
     }
 }
