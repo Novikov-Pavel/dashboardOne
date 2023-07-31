@@ -1,5 +1,6 @@
 import React from 'react'
 import { global } from '../../App/App'
+import { Ilist } from './types'
 import incertDoc from '../../assets/mainContent/categories/incertDoc.svg'
 import label1 from '../../assets/mainContent/categories/label1.svg'
 import label2 from '../../assets/mainContent/categories/label2.svg'
@@ -12,7 +13,7 @@ import '../../SASS/categories.scss'
 
 function Categories() {
     const { li, setLi } = React.useContext(global)
-    const list = {
+    const list: Ilist = {
         'All Notes': 43,
         'Design': 23,
         'Code Blocks': 15,
@@ -22,7 +23,7 @@ function Categories() {
         'Labels': 36,
         'My Notes': 29,
     }
-    const labels = [
+    const labels: string[] = [
         'Notes',
         'Change Notes',
         'From Family',
