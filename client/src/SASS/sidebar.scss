@@ -1,5 +1,5 @@
-@import "../SASS/vars/";
-@import "../SASS/sidebar/sidebarMixins.scss";
+@import "./vars";
+@import "./mixins";
 
 .sidebar {
     padding: 30px 50px;

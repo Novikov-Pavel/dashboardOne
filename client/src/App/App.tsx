@@ -1,29 +1,34 @@
 import React, { useState } from 'react';
-import Header from './components/header'
-import Sidebar from './components/sidebar';
-import Navigate from './components/navigate';
-import Categories from './components/categories';
-import Gallary from './components/gallary';
-import './SASS/App.scss'
+import Header from '../components/header/header'
+import Sidebar from '../components/sidebar/sidebar';
+import Navigate from '../components/navigate/navigate';
+import Categories from '../components/categories';
+import Gallary from '../components/gallary/gallary';
+import { Value, imgI } from './types';
+import '../SASS/App.scss'
 
-let defaultValue = {
+let defaultValue: Value = {
   img: [],
-  setImg: (a: []): void => {
+  setImg: (a) => {
     throw new Error('error');
   },
   albumId: '',
-  setAlbumId: (c: string): void => {
+  setAlbumId: (c) => {
     throw new Error('error');
   },
   flexGrid: true,
-  setFlexGrid: (c: boolean): void => {
+  setFlexGrid: (c) => {
     throw new Error('error');
   },
-  fetching: (value: number): any => {
+  fetching: (value) => {
     throw new Error('error');
   },
   searchGallery: '',
-  setSearchGallary: (c: string): void => {
+  setSearchGallary: (c) => {
+    throw new Error('error');
+  },
+  li: 0,
+  setLi: (c) => {
     throw new Error('error');
   },
 }
@@ -32,10 +37,11 @@ export let global = React.createContext(defaultValue);
 
 function App() {
 
-  const [img, setImg] = useState<[]>([])
-  const [albumId, setAlbumId] = useState('')
-  const [flexGrid, setFlexGrid] = React.useState(true)
-  const [searchGallery, setSearchGallary] = React.useState('')
+  const [li, setLi] = useState(0)
+  const [img, setImg] = useState<imgI[]>([])
+  const [albumId, setAlbumId] = useState<string>('')
+  const [flexGrid, setFlexGrid] = React.useState<boolean>(true)
+  const [searchGallery, setSearchGallary] = React.useState<string>('')
 
   let fetching = async (value: number) => {
     try {
@@ -44,8 +50,8 @@ function App() {
         let data = await res.json()
         setImg(data)
       }
-    } catch (error) {
-      console.error(error);
+    } catch (e) {
+      console.error(e);
     }
 
   }
@@ -58,8 +64,10 @@ function App() {
       flexGrid,
       setFlexGrid,
       fetching,
-      searchGallery, 
-      setSearchGallary
+      searchGallery,
+      setSearchGallary,
+      li,
+      setLi
     }}>
       <div className="App">
         <Header />

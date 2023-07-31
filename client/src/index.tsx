@@ -2,7 +2,7 @@ import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import route from './route';
-import App from './App';
+import App from './App/App';
 
 createRoot(document.getElementById('root') as HTMLElement)
   .render(

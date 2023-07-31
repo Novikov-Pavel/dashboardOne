@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { global } from '../App/App'
 import incertDoc from '../assets/mainContent/categories/incertDoc.svg'
 import label1 from '../assets/mainContent/categories/label1.svg'
 import label2 from '../assets/mainContent/categories/label2.svg'
@@ -10,6 +11,7 @@ import folder from "../assets/mainContent/categories/folder.svg"
 import '../SASS/categories.scss'
 
 function Categories() {
+    const { li, setLi } = React.useContext(global)
     const list = {
         'All Notes': 43,
         'Design': 23,
@@ -28,7 +30,7 @@ function Categories() {
         'Work',
         'New Label'
     ]
-    const [li, setLi] = useState(0)
+
     return (
         <div className='categories'>
             <div className='categories-btn'>
@@ -53,8 +55,7 @@ function Categories() {
                                     key={Math.random()}
                                     className='categories-list-item__span'
                                 >{e.map(e => (
-                                    <span key={e}
-                                    >{e}</span>
+                                    <span key={e}>{e}</span>
                                 ))}</span></li>
                         ))
                     }

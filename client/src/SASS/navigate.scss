@@ -1,0 +1,23 @@
+@import "./mixins";
+@import "./vars";
+
+.fa-layers-counter {
+    background-color: $orange;
+    @include circle(50px, 50px);
+}
+.navigate {
+    @include flex(space-between, center, column);
+    border-right: 2px solid $border;
+    padding: 30px 25px;
+    &-bg {
+        @include flex(center, center, column);
+        @include circle(50px, 50px);
+        background-color: $white;
+        box-shadow: 0px 2px 5px 0px rgba($boxShadow, 0.03);
+    }
+    &-top,
+    &-bottom {
+        @include flex(space-between, flex-start, column);
+        gap: 20px;
+    }
+}

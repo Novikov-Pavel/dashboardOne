@@ -1,17 +1,20 @@
 import React from 'react'
+import more from '../../assets/more.png'
 import { Link } from 'react-router-dom'
-import more from '../assets/more.png'
+import { global } from '../../App/App'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faBell, faChevronUp, faCircleUser, faCircleXmark, faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import { global } from '../App'
-import '../SASS/header.scss'
- 
+import '../../SASS/header.scss'
+
 function Header() {
+    
     const { albumId, setAlbumId, flexGrid, fetching } = React.useContext(global)
     const ref = React.useRef<HTMLInputElement>(null)
     React.useEffect(() => {
         flexGrid ? fetching(16) : fetching(5)
     }, [])
+
+    const menu: string[] = ['Dashboard', 'About Us ', 'News', 'User Policy', 'Contacts']
 
     return (
         <div className='header'>
@@ -26,12 +29,10 @@ function Header() {
                 <Link to={'/'}>Constructor</Link>
             </div>
             <div className='header-menu'>
-                <Link to={'/'}>Dashboard</Link>
-                <Link to={'/'}>About Us</Link>
-                <Link to={'/'}>News</Link>
-                <Link to={'/'}>User Policy</Link>
-                <Link to={'/'}>Contacts</Link>
-                <Link to={'/'}><img src={more} alt="more" /></Link>
+                {menu.map(e => (
+                    <Link to={'/'} key={e} >{e}</Link>
+                ))}
+                <img src={more} alt="more" />
             </div>
             <form className='header-form'>
                 <FontAwesomeIcon

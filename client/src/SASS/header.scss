@@ -1,62 +1,50 @@
+@import "./mixins";
+@import "./vars";
+
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
     text-decoration: none;
 }
 
 .header {
     padding: 25px;
-    background-color: #f7f8fa;
-    border-bottom: 2px solid #edeff2;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    background-color: $border;
+    color: $avaName;
+    border-bottom: 2px solid $border;
+    font: 700 13px Roboto;
+    @include flex(space-between, center);
     &-menu,
     &-form,
     &-acc,
     &-alerts,
     &-logo {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex(space-between, center);
         gap: 10px;
     }
     &-menu {
         gap: 25px;
-        color: #7d8fb3;
-        font: 700 13px Roboto;
-    }
-    &-acc {
-        color: #6B7A99;
-        font: 700 13px Roboto;
+        color: $border;
     }
     &-logo,
     &-alerts {
         &__bg {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #fff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-shadow: 0px 2px 5px 0px rgba(38, 51, 77, 0.03);
+            @include circle(50px, 50px);
+            @include flex(center, center);
+            background-color: $white;
+            box-shadow: 0px 2px 5px 0px rgba($boxShadow, 0.03);
         }
         font: 700 18px Roboto;
-        color: #4d5e80;
     }
     &-form {
         width: 430px;
         border-radius: 30px;
-        background-color: #fff;
+        background-color: $white;
         padding: 15px 20px;
-        box-shadow: 0px 2px 5px 0px rgba(38, 51, 77, 0.03);
+        box-shadow: 0px 2px 5px 0px rgba($boxShadow, 0.03);
         input {
             width: 90%;
             border: none;
             &::placeholder {
-                color: #adb8cc;
+                color: $email;
                 font: 700 12px Roboto;
             }
             &:focus {
@@ -70,10 +58,7 @@
         }
         button {
             border: none;
-            background-color: #fff;
-            &:hover {
-                cursor: pointer;
-            }
+            background-color: $white;
         }
     }
 }

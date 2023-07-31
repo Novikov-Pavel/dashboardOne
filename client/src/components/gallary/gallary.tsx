@@ -1,8 +1,8 @@
 import React from 'react'
 import { faList, faMagnifyingGlass, faTableCells, faTrash, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { global } from '../App'
-import '../SASS/gallery.scss'
+import { global } from '../../App/App'
+import '../../SASS/gallery.scss'
 
 function Gallary() {
     const { img, setImg, flexGrid, setFlexGrid, fetching, searchGallery, setSearchGallary, albumId } = React.useContext(global)
@@ -14,8 +14,6 @@ function Gallary() {
     const clear = () => setImg([])
     const flex = (value: boolean) => setFlexGrid(value)
 
-    console.log('albumId', albumId);
-    
     return (
         <div className='gallery'>
             <div className="gallery-header">
