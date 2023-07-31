@@ -49,28 +49,34 @@ function Gallary() {
             <div className='gallery-inner'>
                 <div className={flexGrid ? 'gallery-block' : 'gallery-none'}>
                     <div className="gallery-flex">
-                        {img.map(e => (
-                            <div className="gallery-flexItem">
-                                <div className="gallery-flexItem__img" key={e.title} >
-                                    <img src={e.thumbnailUrl} alt={e.title} key={e.title} />
+                        {img
+                            .filter(e =>
+                                e.title.toLocaleLowerCase().includes(searchGallery.toLocaleLowerCase()))
+                            .map(e => (
+                                <div className="gallery-flexItem">
+                                    <div className="gallery-flexItem__img" key={e.title} >
+                                        <img src={e.thumbnailUrl} alt={e.title} key={e.title} />
+                                    </div>
+                                    <h3>{e.title.slice(0, 20)}...</h3>
+                                    <p>ID: {e.id}</p>
                                 </div>
-                                <h3>{e.title.slice(0, 20)}...</h3>
-                                <p>ID: {e.id}</p>
-                            </div>
-                        ))}
+                            ))}
                     </div>
                 </div>
                 <div className={!flexGrid ? 'gallery-block' : 'gallery-none'}>
                     <div className="gallery-grid">
-                        {img.map(e => (
-                            <div className='gallery-gridItem'>
-                                <div className='gallery-gridItem__img' key={e.title} >
-                                    <img src={e.thumbnailUrl} alt={e.title} key={e.title} />
+                        {img
+                            .filter(e =>
+                                e.title.toLocaleLowerCase().includes(searchGallery.toLocaleLowerCase()))
+                            .map(e => (
+                                <div className='gallery-gridItem'>
+                                    <div className='gallery-gridItem__img' key={e.title} >
+                                        <img src={e.thumbnailUrl} alt={e.title} key={e.title} />
+                                    </div>
+                                    <h3>{e.title.slice(0, 20)}...</h3>
+                                    <p>ID: {e.id}</p>
                                 </div>
-                                <h3>{e.title.slice(0, 20)}...</h3>
-                                <p>ID: {e.id}</p>
-                            </div>
-                        ))}
+                            ))}
                     </div>
                 </div>
             </div>
