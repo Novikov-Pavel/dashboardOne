@@ -1,4 +1,8 @@
-![License](https://img.shields.io/github/license/Novikov-Pavel/myPizza.svg?style=for-the-badge) ![Repo Size](https://img.shields.io/github/languages/code-size/Novikov-Pavel/myPizza.svg?style=for-the-badge) ![TOP_LANGUAGE](https://img.shields.io/github/languages/top/Novikov-Pavel/myPizza.svg?style=for-the-badge) ![FORKS](https://img.shields.io/github/forks/Novikov-Pavel/myPizza.svg?style=for-the-badge&social) ![Stars](https://img.shields.io/github/stars/Novikov-Pavel/myPizza.svg?style=for-the-badge)
+![License](https://img.shields.io/github/license/Novikov-Pavel/mkskom-test-task.svg?style=for-the-badge) 
+![Repo Size](https://img.shields.io/github/languages/code-size/Novikov-Pavel/mkskom-test-task.svg?style=for-the-badge) 
+![TOP_LANGUAGE](https://img.shields.io/github/languages/top/Novikov-Pavel/mkskom-test-task.svg?style=for-the-badge) 
+![FORKS](https://img.shields.io/github/forks/Novikov-Pavel/mkskom-test-task.svg?style=for-the-badge&social) 
+![Stars](https://img.shields.io/github/stars/Novikov-Pavel/mkskom-test-task.svg?style=for-the-badge)
     
 # Личный кабинет пользователя
 
@@ -19,9 +23,7 @@
 
 1. Галерея должна иметь динамическое содержимое – список картинок должен быть получен сиспользованием веб-запросов. 
    Сделано
-2. Использовать
-https://jsonplaceholder.typicode.com/
-или любое другое HTTP API скартинками, расположенное в открытом доступе
+2. Использовать https://jsonplaceholder.typicode.com/ или любое другое HTTP API скартинками, расположенное в открытом доступе
     Использовал jsonplaceholder
 3. Количество картинок - 16 (не должно быть скролла страницы, если высота экрана пользователя равна высоте макета)
     При высоте экрана, равной высоте макета - скрола нет.
@@ -31,7 +33,7 @@ https://jsonplaceholder.typicode.com/
     Сделано
 6. При нажатии на кнопку переключения следует изменять CSS-свойство display
     Сделано.
-7. при использовании flexbox все элементы сетки должны быть одного размера (как намакете);
+7. При использовании flexbox все элементы сетки должны быть одного размера (как намакете);
     при использовании CSS Grid элементы должны быть разных размеров и соответствоватьрасположению на рисунке ниже;
     Сделано в соответствии с макетами.
 8. Картинки для grid-галереи рекомендуется также получать через API, но в крайнем случаеможно использовать статичные ссылки;
@@ -41,18 +43,14 @@ https://jsonplaceholder.typicode.com/
 10. В верхней части страницы необходимо подключить форму.
     Сделано.
 11. валидация поля ввода – пользователю разрешить указывать только цифры (нельзя: буквы,пробелы, знаки препинания и иные символы);
-    В инпут нельзя ввести ничего, кроме цифр. Фетч запрос отправляется по кнопке справа и рендерятся картинки на странице.
-12. введенное число должно использоваться программой в качестве части “{albumId}”следующего URL-шаблона: “
-https://jsonplaceholder.typicode.com/albums/{albumId}/photos”
-для осуществления сетевого взаимодействия.
+    В input нельзя ввести ничего, кроме цифр. Fetch запрос отправляется по кнопке справа и рендерятся картинки на странице.
+12. введенное число должно использоваться программой в качестве части “{albumId}”следующего URL-шаблона: “https://jsonplaceholder.typicode.com/albums/{albumId}/photos” для осуществления сетевого взаимодействия.
     Сделано. Чуть выше писал, как использовал
-13. шрифты, используемые в макете, подключать с использованием CSS-правила @font-face
+13. Шрифты, используемые в макете, подключать с использованием CSS-правила @font-face
     Сделано
-14. картинки должны представлять собой узел типа img
+14. Картинки должны представлять собой узел типа img
     Сделано
 15. Вёрстку сделал под экран 1600px, как в задании.
-
-Стек технологий: SCSS, ReactJS, Typescript
 
 Дополнительно сделано:
 
@@ -79,9 +77,6 @@ https://jsonplaceholder.typicode.com/albums/{albumId}/photos”
 <a href="https://sass-lang.com/">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" height="40px" width="40px" alt="SASS" />
 </a>
-<a href="https://developer.mozilla.org/en-US/docs/Web/CSS">
-  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg" height="40px" width="40px" alt="CSS" />
-</a>
 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg" height="40px" width="40px" alt="HTML" />
 </a>
@@ -90,7 +85,7 @@ https://jsonplaceholder.typicode.com/albums/{albumId}/photos”
 
 ### Prerequisites
 
-1. Установите среду разработки VS Code (https://code.visualstudio.com/download) или любую другую.
+1. Установите среду разработки [VS Code](https://code.visualstudio.com/download) или любую другую.
 2. Установите терминал или используйте встроенный в VS Code. 
 
 ### Installation
